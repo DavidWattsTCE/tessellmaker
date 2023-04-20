@@ -42,7 +42,7 @@ let text = 'Your Name',
 
 let unitText = 'Your Unit';
 
-let height = 4,
+let height = 2,
     size = 8,
     curveSegments = 12,
 
@@ -240,7 +240,7 @@ function createText() {
 
     textMesh1.position.x = -28.625;
     textMesh1.position.y = 23;
-    textMesh1.position.z = 2;
+    textMesh1.position.z = 3;
 
     if (namebbox.max.x - namebbox.min.x > -xMinLimit) {
         var scaleFactor = (xMaxLimit - xMinLimit)/(namebbox.max.x - namebbox.min.x);
@@ -274,7 +274,7 @@ function createText() {
 
     unitTextMesh.position.x = 28.625;
     unitTextMesh.position.y = 23;
-    unitTextMesh.position.z = 2;
+    unitTextMesh.position.z = 3;
 
     if (namebbox.max.x - namebbox.min.x > -xMinLimit) {
         var scaleFactor = (xMaxLimit - xMinLimit)/(namebbox.max.x - namebbox.min.x);
@@ -309,7 +309,7 @@ function createText() {
 
     dateTextMesh.position.x = -15;
     dateTextMesh.position.y = -44;
-    dateTextMesh.position.z = 2;
+    dateTextMesh.position.z = 3;
     
     group.add(dateTextMesh);
 
@@ -338,7 +338,7 @@ function createText() {
 
     yearTextMesh.position.x = 15;
     yearTextMesh.position.y = -44;
-    yearTextMesh.position.z = 2;
+    yearTextMesh.position.z = 3;
 
     group.add(yearTextMesh);
 }
