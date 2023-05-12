@@ -195,8 +195,8 @@ function loadSVG() {
     });
 
     svgMesh = new THREE.Mesh(svgGeometry, material);
-    svgMesh.scale.x = 0.5;
-    svgMesh.scale.y = -0.5;
+    svgMesh.scale.x = 1;
+    svgMesh.scale.y = 1;
     svgMesh.geometry.center();
     svgMesh.position.z = 1;
 
