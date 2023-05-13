@@ -19,7 +19,7 @@ let group, textMesh1, dateTextMesh, yearTextMesh, unitTextMesh, textGeo, unitTex
 
 let svgMesh, svgGeometry, exporter, textMaterials;
 
-let xMinLimit = -52;
+let xMinLimit = -49;
 let xMaxLimit = 0;
 
 
@@ -42,8 +42,8 @@ let text = 'Your Name',
 
 let unitText = 'Your Unit';
 
-let height = 2,
-    size = 8,
+let height = 1.5,
+    size = 7.5,
     curveSegments = 12,
 
     bevelThickness = 0.75,
@@ -189,16 +189,16 @@ function loadSVG() {
 
     shapes.forEach((shape, i) => {
         svgGeometry = new THREE.ExtrudeGeometry(shape, {
-            depth: 2,
+            depth: 1.5,
             bevelEnabled: false
           });
     });
 
     svgMesh = new THREE.Mesh(svgGeometry, material);
-    svgMesh.scale.x = 1;
-    svgMesh.scale.y = 1;
+    svgMesh.scale.x = 0.34;
+    svgMesh.scale.y = 0.34;
     svgMesh.geometry.center();
-    svgMesh.position.z = 1;
+    svgMesh.position.z = 1.5/2;
 
     bbox = new THREE.Box3();
     bbox.setFromObject(svgMesh);
@@ -244,7 +244,7 @@ function createText() {
 
     textMesh1.position.x = -28.625;
     textMesh1.position.y = 23;
-    textMesh1.position.z = 3;
+    textMesh1.position.z = 1.5+1.5/2;
 
     if (namebbox.max.x - namebbox.min.x > -xMinLimit) {
         var scaleFactor = (xMaxLimit - xMinLimit)/(namebbox.max.x - namebbox.min.x);
@@ -278,7 +278,7 @@ function createText() {
 
     unitTextMesh.position.x = 28.625;
     unitTextMesh.position.y = 23;
-    unitTextMesh.position.z = 3;
+    unitTextMesh.position.z = 1.5+1.5/2;
 
     if (namebbox.max.x - namebbox.min.x > -xMinLimit) {
         var scaleFactor = (xMaxLimit - xMinLimit)/(namebbox.max.x - namebbox.min.x);
@@ -311,9 +311,9 @@ function createText() {
     namebbox = new THREE.Box3();
     namebbox.setFromObject(dateTextMesh);
 
-    dateTextMesh.position.x = -15;
-    dateTextMesh.position.y = -44;
-    dateTextMesh.position.z = 3;
+    dateTextMesh.position.x = -13;
+    dateTextMesh.position.y = -43;
+    dateTextMesh.position.z = 1.5+1.5/2;
     
     group.add(dateTextMesh);
 
@@ -340,9 +340,9 @@ function createText() {
     namebbox = new THREE.Box3();
     namebbox.setFromObject(yearTextMesh);
 
-    yearTextMesh.position.x = 15;
-    yearTextMesh.position.y = -44;
-    yearTextMesh.position.z = 3;
+    yearTextMesh.position.x = 13;
+    yearTextMesh.position.y = -43;
+    yearTextMesh.position.z = 1.5+1.5/2;
 
     group.add(yearTextMesh);
 }
